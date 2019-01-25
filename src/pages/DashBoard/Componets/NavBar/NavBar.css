@@ -3,3 +3,41 @@
   background: #71b6f9;
   display: flex;
 }
+
+.logo {
+  width: 250px;
+  text-align: center;
+  line-height: 70px;
+  font-size: 25px;
+  font-family: 'Rancho', cursive;
+  color: #fff;
+  font-weight: bold;
+}
+
+.menuIcon {
+  display: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.menuIcon:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+
+
+@media only screen and (max-width: 786px) {
+
+ .menuIcon{
+   display: flex;
+   width: 70px;
+   font-size: 25px;
+   align-items: center;
+   justify-content: center;
+ }
+
+.logo{
+  display: none;
+}
+
+}
