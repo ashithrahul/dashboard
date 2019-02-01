@@ -5,8 +5,10 @@ import { Router, Route } from 'react-router-dom';
 import history from 'modules/history';
 import DashBoard from '../pages/DashBoard/DashBoard.route';
 import '../global.css';
-
-const App1 = () => <div>aoo</div>;
+import Login from '../pages/Login/Login';
+import Public from '../pages/Public/Public';
+import SignUp from '../pages/SignUp/SignUp';
+import Firebase, { FireBaseContext } from './FireBase';
 
 export class App extends React.Component {
   static propTypes = {
@@ -16,12 +18,16 @@ export class App extends React.Component {
 
   render() {
     return (
-      <Router history={history}>
-        <Fragment>
-          <Route exact path="/" component={App1} />
-          <Route path="/dashboard" component={DashBoard} />
-        </Fragment>
-      </Router>
+      <FireBaseContext.Provider value={new Firebase()}>
+        <Router history={history}>
+          <Fragment>
+            <Route exact path="/" component={Public} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/sign-up" component={SignUp} />
+            <Route path="/dashboard" component={DashBoard} />
+          </Fragment>
+        </Router>
+      </FireBaseContext.Provider>
     );
   }
 }

@@ -17,9 +17,9 @@ export const app = {
     this.render(App);
 
     /* istanbul ignore else */
-    if (process.env.NODE_ENV === 'production') {
-      this.initOfflinePlugin();
-    }
+    // if (process.env.NODE_ENV === 'production') {
+    //   this.initOfflinePlugin();
+    // }
   },
   render(Component) {
     const root = document.getElementById('react');

@@ -19,12 +19,13 @@
     "ES6"
   ],
   "dependencies": {
-    "bootstrap": "^4.2.1",
+    "@material-ui/core": "^3.9.1",
     "classlist-polyfill": "^1.2.0",
     "classnames": "^2.2.6",
     "ease-component": "^1.0.0",
     "events-polyfill": "^2.1.0",
     "fbjs": "^1.0.0",
+    "firebase": "^5.8.1",
     "history": "^4.7.2",
     "immutability-helper": "^2.9.0",
     "lodash": "^4.17.11",
@@ -142,7 +143,6 @@
     "mini-css-extract-plugin": "^0.5.0",
     "modernizr-loader": "^1.0.1",
     "node-sass": "^4.11.0",
-    "offline-plugin": "^5.0.6",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",

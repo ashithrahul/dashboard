@@ -35,4 +35,6 @@ export const STATUS = {
   READY: 'ready',
   SUCCESS: 'success',
   ERROR: 'error',
+  INFO: 'info',
+  WARNING: 'warning',
 };
