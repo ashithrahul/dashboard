@@ -6,11 +6,16 @@ import icons from '../../../../constants/icons';
 import { withFirebase } from '../../../../containers/FireBase';
 import * as styles from './ListUser.css';
 
-const UserDetails = ({ name }) => (
+const UserDetails = ({ name, img }) => (
   <Fragment>
     <div className={styles.nameSection}>
+      <span className={styles.infoButton}>
+        <IconButton aria-label="titter">
+          <i className={icons.ellipsisV} />
+        </IconButton>
+      </span>
       <img
-        src="https://randomuser.me/api/portraits/men/17.jpg"
+        src={`https://randomuser.me/api/portraits/men/${img}`}
         data-int="17"
         data-gender="men"
         className={styles.userImg}
@@ -25,6 +30,15 @@ const UserDetails = ({ name }) => (
         </IconButton>
         <IconButton aria-label="gitlab">
           <i className={classNames(icons.gitLab, styles.icon)} />
+        </IconButton>
+        <IconButton aria-label="fb">
+          <i className={classNames(icons.fb, styles.icon)} />
+        </IconButton>
+        <IconButton aria-label="whatsapp">
+          <i className={classNames(icons.whatsApp, styles.icon)} />
+        </IconButton>
+        <IconButton aria-label="mail">
+          <i className={classNames(icons.mail, styles.icon)} />
         </IconButton>
       </div>
     </div>
@@ -72,7 +86,7 @@ class ListUser extends Component {
           {users.map(user => (
             <Card
               classes={{ container: styles.cardContainer }}
-              child={<UserDetails name={user.data.name} />}
+              child={<UserDetails name={user.data.name} img={user.data.img} />}
             />
           ))}
         </div>

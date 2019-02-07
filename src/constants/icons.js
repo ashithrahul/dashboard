@@ -17,5 +17,9 @@ const icons = {
   success: 'fa fa-check',
   twitter: 'fa fa-twitter',
   gitLab: 'fa fa-gitlab',
+  ellipsisV: 'fa fa-ellipsis-v',
+  fb: 'fa fa-facebook-official',
+  whatsApp: 'fa fa-whatsapp',
+  mail: 'fa fa-envelope-o',
 };
 export default icons;

@@ -34,6 +34,10 @@
   width: calc(100% - 120px);
   float: right;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 5px 20px;
 }
 
 .userNameSection h1{
@@ -47,11 +51,17 @@
 .iconWrapper{
   position: absolute;
   top: 100%;
-  left: 120px;
+  left: 125px;
 }
 
 .icon{
   color: #6dc19a;
+}
+
+.infoButton{
+  position: absolute;
+  right: 4px;
+  top: 12px;
 }
 
 @media only screen and (max-width: 786px) {
