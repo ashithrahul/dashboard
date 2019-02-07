@@ -22,8 +22,8 @@ export class App extends React.Component {
         <Router history={history}>
           <Fragment>
             <Route exact path="/" component={Public} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/sign-up" component={SignUp} />
+            <Route path="/login" component={Login} />
+            <Route path="/sign-up" component={SignUp} />
             <Route path="/dashboard" component={DashBoard} />
           </Fragment>
         </Router>

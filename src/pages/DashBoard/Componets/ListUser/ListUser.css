@@ -1,0 +1,68 @@
+.usersWrapper {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.cardContainer {
+  min-width: 370px;
+  margin-bottom: 0;
+  height: 350px;
+  border-radius: 10px;
+  padding: 0;
+}
+
+.nameSection {
+  height: 70px;
+  background-color: #6dc19a;;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+}
+
+.userImg {
+  border-radius: 50%;
+  border: 3px solid #415663;
+  height: 100px;
+  position: absolute;
+  top: calc(100% - 50px);
+  left: 20px;
+}
+
+.userNameSection {
+  width: calc(100% - 120px);
+  float: right;
+  height: 100%;
+}
+
+.userNameSection h1{
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 1);
+}
+.userNameSection p{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.iconWrapper{
+  position: absolute;
+  top: 100%;
+  left: 120px;
+}
+
+.icon{
+  color: #6dc19a;
+}
+
+@media only screen and (max-width: 786px) {
+  .usersWrapper{
+    display: flex;
+    flex-direction: column;
+  }
+  .cardContainer {
+    margin-bottom: 10px;
+    height: 100px;
+    width: 100%;
+  }
+
+}

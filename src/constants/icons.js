@@ -15,5 +15,7 @@ const icons = {
   info: 'fa fa-info-circle',
   error: 'fa fa-times-circle',
   success: 'fa fa-check',
+  twitter: 'fa fa-twitter',
+  gitLab: 'fa fa-gitlab',
 };
 export default icons;

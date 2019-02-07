@@ -5,9 +5,10 @@ import Input from '../../components/Input/Input';
 import Table from '../../components/Table/Table';
 import { withAuthentication, withAuthorization } from '../../containers/FireBase';
 import AddUser from './Componets/AddUser/AddUser';
+import ListUser from './Componets/ListUser/ListUser';
 import NavBar from './Componets/NavBar/NavBar';
 import SideBar from './Componets/SideBar/SideBar';
-import { ADD_USER, DASHBOARD_URL } from './DashBoard.constants';
+import { ADD_USER, DASHBOARD_URL, LIST_USER } from './DashBoard.constants';
 
 const Home = () => (
   <div>
@@ -57,6 +58,7 @@ const DashBoard = props => {
           <SideBar />
           <div style={contentWrapper}>
             <Route path={ADD_USER} component={AddUser} />
+            <Route path={LIST_USER} component={ListUser} />
             <Route exact path={DASHBOARD_URL} component={Home} />
           </div>
         </div>

@@ -141,7 +141,7 @@ module.exports = webpackEnv => {
       ].filter(Boolean),
     },
     output: {
-      chunkFilename: isProd ? 'scripts/js/[name].[git-hash].chunk.js' : '[name].chunk.js',
+      chunkFilename: isProd ? './scripts/js/[name].[git-hash].chunk.js' : '[name].chunk.js',
       filename: isProd ? '[name].[git-hash].js' : '[name].js',
       path: paths.appBuild,
       pathinfo: isDev,

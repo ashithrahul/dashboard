@@ -1,5 +1,8 @@
-import * as firebase from 'firebase';
+import firebase from 'firebase/app';
 import React from 'react';
+import 'firebase/auth';
+import 'firebase/firestore';
+import 'firebase/app';
 
 const prodConfig = {
   apiKey: 'AIzaSyASaQfEVA7pHLwsM3DDQbPr-36nUYOrkJk',

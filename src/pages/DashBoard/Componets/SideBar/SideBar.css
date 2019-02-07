@@ -57,7 +57,7 @@
 
 .sideBarWrapper .active,
 .title:hover {
-  color: #71b6f9;
+  color: #509a78;
 }
 
 .active:before {
@@ -65,7 +65,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  background: #71b6f9;
+  background: #509a78;
   height: 100%;
   width: 3px;
 }
