@@ -68,11 +68,55 @@
   .usersWrapper{
     display: flex;
     flex-direction: column;
+    height: 100px;
   }
   .cardContainer {
     margin-bottom: 10px;
-    height: 100px;
+    height: 100%;
     width: 100%;
+    min-width: unset;
+  }
+  .userImg{
+    height: 50px;
+    width: 50px;
+    position: unset;
+  }
+  .nameSection{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: transparent;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .userNameSection{
+    height: fit-content;
+    flex-grow: 1;
+    padding: 0 10px;
+  }
+  .infoButton{
+    position: unset;
+  }
+  .iconWrapper{
+    display: flex;
+    bottom: 20px;
+    right: 15px;
+    top: unset;
+    left: unset;
+  }
+  .iconWrapper button{
+    height: 10px;
+    width: 10px;
+  }
+  .icon:before {
+    font-size: 12px;
+  }
+  .userNameSection h1{
+    font-size: 18px;
+  }
+  .userNameSection p{
+    font-size: 12px;
   }
 
 }

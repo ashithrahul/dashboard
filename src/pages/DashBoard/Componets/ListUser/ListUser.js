@@ -1,49 +1,65 @@
 import classNames from 'classnames';
 import IconButton from '@material-ui/core/IconButton';
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment, useState } from 'react';
 import Card from '../../../../components/Card/Card';
+import MenuComponent from '../../../../components/Menu/Menu';
+import Popup from '../../../../components/Popup/Popup';
 import icons from '../../../../constants/icons';
 import { withFirebase } from '../../../../containers/FireBase';
 import * as styles from './ListUser.css';
 
-const UserDetails = ({ name, img }) => (
-  <Fragment>
-    <div className={styles.nameSection}>
-      <span className={styles.infoButton}>
-        <IconButton aria-label="titter">
-          <i className={icons.ellipsisV} />
-        </IconButton>
-      </span>
-      <img
-        src={`https://randomuser.me/api/portraits/men/${img}`}
-        data-int="17"
-        data-gender="men"
-        className={styles.userImg}
-      />
-      <section className={styles.userNameSection}>
-        <h1>{name}</h1>
-        <p>Designer</p>
-      </section>
-      <div className={styles.iconWrapper}>
-        <IconButton aria-label="titter">
-          <i className={classNames(icons.twitter, styles.icon)} />
-        </IconButton>
-        <IconButton aria-label="gitlab">
-          <i className={classNames(icons.gitLab, styles.icon)} />
-        </IconButton>
-        <IconButton aria-label="fb">
-          <i className={classNames(icons.fb, styles.icon)} />
-        </IconButton>
-        <IconButton aria-label="whatsapp">
-          <i className={classNames(icons.whatsApp, styles.icon)} />
-        </IconButton>
-        <IconButton aria-label="mail">
-          <i className={classNames(icons.mail, styles.icon)} />
-        </IconButton>
+const UserDetails = ({ name, img }) => {
+  const [anchorEl, setTargetRef] = useState(null);
+  const [popUpData, setPopupData] = useState(null);
+  return (
+    <Fragment>
+      <div className={styles.nameSection}>
+        <img
+          src={`https://randomuser.me/api/portraits/men/${img}`}
+          data-int="17"
+          data-gender="men"
+          className={styles.userImg}
+        />
+        <section className={styles.userNameSection}>
+          <h1>{name}</h1>
+          <p>Designer</p>
+        </section>
+        <div className={styles.iconWrapper}>
+          <IconButton aria-label="titter">
+            <i className={classNames(icons.twitter, styles.icon)} />
+          </IconButton>
+          <IconButton aria-label="gitlab">
+            <i className={classNames(icons.gitLab, styles.icon)} />
+          </IconButton>
+          <IconButton aria-label="fb">
+            <i className={classNames(icons.fb, styles.icon)} />
+          </IconButton>
+          <IconButton aria-label="whatsapp">
+            <i className={classNames(icons.whatsApp, styles.icon)} />
+          </IconButton>
+          <IconButton aria-label="mail">
+            <i className={classNames(icons.mail, styles.icon)} />
+          </IconButton>
+        </div>
+        <span className={styles.infoButton} onClick={event => setTargetRef(event.currentTarget)}>
+          <IconButton aria-label="titter">
+            <i className={icons.ellipsisV} />
+          </IconButton>
+        </span>
       </div>
-    </div>
-  </Fragment>
-);
+      <MenuComponent
+        list={[
+          { onClick: () => setPopupData(name), title: 'Add' },
+          { onClick: () => setPopupData(name), title: 'Edit' },
+          { onClick: () => setPopupData(name), title: 'Remove' },
+        ]}
+        anchorEl={anchorEl}
+        closeMenu={setTargetRef}
+      />
+      <Popup popUpData={popUpData} handleClose={() => setPopupData(null)} />
+    </Fragment>
+  );
+};
 
 const snapshotToArray = snapshot => {
   const returnArr = [];

@@ -9,6 +9,7 @@ import ListUser from './Componets/ListUser/ListUser';
 import NavBar from './Componets/NavBar/NavBar';
 import SideBar from './Componets/SideBar/SideBar';
 import { ADD_USER, DASHBOARD_URL, LIST_USER } from './DashBoard.constants';
+import * as styles from './DashBoard.css';
 
 const Home = () => (
   <div>
@@ -42,32 +43,23 @@ const Home = () => (
 );
 
 const divStyle = { display: 'flex', height: '100%' };
-const contentWrapper = {
-  padding: '20px',
-  height: 'calc(100% - 70px)',
-  overflow: 'auto',
-  width: '100%',
-};
 
-const DashBoard = props => {
-  return (
-    <Router>
-      <Fragment>
-        <NavBar />
-        <div style={divStyle}>
-          <SideBar />
-          <div style={contentWrapper}>
-            <Route path={ADD_USER} component={AddUser} />
-            <Route path={LIST_USER} component={ListUser} />
-            <Route exact path={DASHBOARD_URL} component={Home} />
-          </div>
+const DashBoard = props => (
+  <Router>
+    <Fragment>
+      <NavBar />
+      <div style={divStyle}>
+        <SideBar />
+        <div className={styles.contentWrapper}>
+          <Route path={ADD_USER} component={AddUser} />
+          <Route path={LIST_USER} component={ListUser} />
+          <Route exact path={DASHBOARD_URL} component={Home} />
         </div>
-      </Fragment>
-    </Router>
-  );
-};
+      </div>
+    </Fragment>
+  </Router>
+);
 
 const condition = authUser => !!authUser;
-
 
 export default withAuthentication(withAuthorization(condition)(DashBoard));
